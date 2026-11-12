@@ -21,16 +21,14 @@ jobs:
     timeout-minutes: 5
     
     steps:
-      # generates a snake game from a github user "github_user_name" contributions graph, output a svg animation at "svg_out_path"
-      # change the theme you would like from the list in the palette="theme" section below in outputs, default is rainbow
       - name: generate github-contribution-grid-snake.svg
         uses: BroMinee/snk-minecraft/svg-only@main
         with:
           github_user_name: ${{ github.repository_owner }}
-    
+          text: BroMine
           outputs: |
             dist/github-contribution-grid-snake.svg
-            dist/github-contribution-grid-snake-dark.svg?palette=rainbow 
+            dist/github-contribution-grid-snake-dark.svg?variant=deepslate
             
           
       # push the content of <build_dir> to a branch
